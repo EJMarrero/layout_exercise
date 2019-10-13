@@ -3,15 +3,7 @@ $base-color-red: red;
 $base-color-green: green;
 $base-color-blue: blue;
 
-$palette: (
-  blue: (
-    base: #22678C,
-    lightBlue: #23778F,
-    lighterBlue: #48525C,
-  ),
-  yellow: (
-    base: #ffa949,
-    lightYellow: #ffbf49,
-  )
- 
-)
+
+//---------- Sizes -------------//
+$container-width: 100px;
+$container-height: 400px;

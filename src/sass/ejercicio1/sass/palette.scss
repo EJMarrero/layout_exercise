@@ -1,54 +1,44 @@
+@import "_functions";
 @import "_variables";
-.palette-1 div{
+@import "_mixins";
+
+.palette-1 {
   display: flex;
-  background-color: map-get(map-get($palette, blue), base);
-}
-
-$red:      hsl(   0, 100%,  50% );
-//               +0, -50%, +30%
-$salmon:   hsl(   0,  50%,  80% );
-
-$blue:     hsl( 240, 100%,  50% );
-//               +0, -50%, +30%
-$lavender: hsl( 240,  50%,  80% );
-
-$green:    hsl( 120, 100%,  50% );
-//               +0, -50%, +30%
-$seafoam:  hsl( 120,  50%,  80% );
-
-
-
-.slice {
-  &:nth-child(3n-2) {
-    background:         $red;
-    border-right-color: $salmon;
+  .darken-1 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: darkerColor($base-color-red, 10%);
   }
-
-  &:nth-child(3n-1) {
-    background:         $blue;
-    border-right-color: $lavender;
+  .darken-2 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: darkerColor($base-color-red, 20%);
   }
-
-  &:nth-child(3n-0) {
-    background:         $green;
-    border-right-color: $seafoam;
+  .darken-3 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: darkerColor($base-color-red, 30%);
   }
-  
-  // lol, this is a weird way to do it
-  height: 20vh;
-  border-right: 25vw solid;
-  width: 50%;
-  box-sizing: border-box;
+  .darken-4 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: darkerColor($base-color-red, 40%);
+  }
+  .base-color {
+    @include palette-size-container($container-height, $container-width);
+    background-color: $base-color-red;
+  }
+  .lighten-1 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: ligtherColor($base-color-red, 10%);
+  }
+  .lighten-2 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: ligtherColor($base-color-red, 20%);
+  }
+  .lighten-3 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: ligtherColor($base-color-red, 30%);
+  }
+  .lighten-4 {
+    @include palette-size-container($container-height, $container-width);
+    background-color: ligtherColor($base-color-red, 40%);
+  }
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-}

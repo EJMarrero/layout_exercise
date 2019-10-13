@@ -1,0 +1,33 @@
+@function darkerColor($baseColor, $gradualPercent){
+  @return darken($baseColor, $gradualPercent);
+}
+
+@function ligtherColor($baseColor, $gradualPercent){
+  @return lighten($baseColor, $gradualPercent); 
+}
+
+
+// @import variables;
+
+//   .palette-1.base-color {
+//     background-color: $base-color-red;
+//   }
+//   .palette-1 .darken-1 {
+//     myPaletteFunction($base-color-red, $gradual-percent-1);
+//   }
+
+
+
+
+
+//   .palette-2.base-color {
+//     background-color: $base-color-blue;
+//   }
+
+//   .palette-3.base-color {
+//     background-color: $base-color-green;
+//   }
+
+
+
+  
