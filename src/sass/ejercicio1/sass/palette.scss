@@ -1,0 +1,54 @@
+@import "_variables";
+.palette-1 div{
+  display: flex;
+  background-color: map-get(map-get($palette, blue), base);
+}
+
+$red:      hsl(   0, 100%,  50% );
+//               +0, -50%, +30%
+$salmon:   hsl(   0,  50%,  80% );
+
+$blue:     hsl( 240, 100%,  50% );
+//               +0, -50%, +30%
+$lavender: hsl( 240,  50%,  80% );
+
+$green:    hsl( 120, 100%,  50% );
+//               +0, -50%, +30%
+$seafoam:  hsl( 120,  50%,  80% );
+
+
+
+.slice {
+  &:nth-child(3n-2) {
+    background:         $red;
+    border-right-color: $salmon;
+  }
+
+  &:nth-child(3n-1) {
+    background:         $blue;
+    border-right-color: $lavender;
+  }
+
+  &:nth-child(3n-0) {
+    background:         $green;
+    border-right-color: $seafoam;
+  }
+  
+  // lol, this is a weird way to do it
+  height: 20vh;
+  border-right: 25vw solid;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
