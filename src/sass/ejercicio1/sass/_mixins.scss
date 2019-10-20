@@ -1,4 +1,52 @@
-@mixin palette-size-container($height, $width) {
+@import "_variables";
+
+@mixin generatePalette($baseColor){
+  @include flexing-palette;
+  div {
+    @include size-palette-children($container-height, $container-width);
+    @include align-children;
+  }
+  .base-color {
+    background-color: $baseColor;
+  }
+  @include generateDarker($baseColor, $paletteSize);
+  @include generateLigther($baseColor, $paletteSize);
+}
+
+@mixin generateLigther($color, $paletteSize) {
+  $incremental: 0;
+  @for $i from calculateSizeToBaseColor($paletteSize) to $paletteSize {
+      .palette-color-container:nth-child(#{$i}) {
+          background-color: lighten($color, $incremental*$paletteGradualPercent);
+      }
+      $incremental: $incremental + 1;
+  }
+}
+
+@mixin generateDarker($color, $paletteSize){
+  $incremental: 0;
+  @for $i from 0 to calculateSizeToBaseColor($paletteSize) {
+    .palette-color-container:nth-child(#{$i}) {
+        background-color: darken($color, ($paletteGradualPercent*calculateSizeToBaseColor($paletteSize) - 1)-($incremental*$paletteGradualPercent));
+    }
+    $incremental: $incremental + 1;
+  }
+}
+
+@mixin flexing-palette{
+  display: flex;
+  justify-content: center;
+}
+
+@mixin size-palette-children($height, $width) {
   height: $height;
   width: $width;
 }
+@mixin align-children{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 4px;
+}
+

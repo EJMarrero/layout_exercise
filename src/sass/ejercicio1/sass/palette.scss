@@ -2,43 +2,19 @@
 @import "_variables";
 @import "_mixins";
 
-.palette-1 {
-  display: flex;
-  .darken-1 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: darkerColor($base-color-red, 10%);
-  }
-  .darken-2 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: darkerColor($base-color-red, 20%);
-  }
-  .darken-3 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: darkerColor($base-color-red, 30%);
-  }
-  .darken-4 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: darkerColor($base-color-red, 40%);
-  }
-  .base-color {
-    @include palette-size-container($container-height, $container-width);
-    background-color: $base-color-red;
-  }
-  .lighten-1 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: ligtherColor($base-color-red, 10%);
-  }
-  .lighten-2 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: ligtherColor($base-color-red, 20%);
-  }
-  .lighten-3 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: ligtherColor($base-color-red, 30%);
-  }
-  .lighten-4 {
-    @include palette-size-container($container-height, $container-width);
-    background-color: ligtherColor($base-color-red, 40%);
-  }
+
+body{
+  font-family: sans-serif;
+  color: white;
 }
+.palette-1 {
+  @include generatePalette($base-color-red);
+}
+.palette-2 {
+  @include generatePalette($base-color-green);
+}
+.palette-3 {
+  @include generatePalette($base-color-blue);
+}
+
 
