@@ -1,0 +1,49 @@
+@import 'themes/_blue';
+// @import 'themes/_red';
+@import '_variables';
+@import '_mixins';
+
+body {
+  padding-left: 80px;
+  padding-bottom: 80px;
+}
+
+.main-container{
+  width: 20%;
+  font-weight: bold;
+  font-family: $box-font;
+
+  .base-theme {
+    @include default-box-style;
+    background-color: $base-color;
+    border-radius: $border-radius-theme;
+  }
+  .important-theme {
+    @include default-box-style;
+    background-color: $important-color;
+    border-radius: $border-radius-theme;
+  }
+  .warning-theme {
+    @include default-box-style;
+    background-color: $warning-color;
+    border-radius:$border-radius-theme;
+  }
+
+}
+  .main-font {
+    font-family: $main-font;
+  }
+
+  .secondary-font {
+    font-family: $secondary-font;
+  }
+  .box-shadow {
+    width: 16%;
+    font-family: $box-font;
+    font-weight: bold;
+    @include default-box-style;
+    -webkit-box-shadow: $box-shadow-theme;
+    -moz-box-shadow: $box-shadow-theme;
+    box-shadow: $box-shadow-theme;
+    border-radius:$border-radius-theme;
+  }
