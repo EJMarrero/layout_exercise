@@ -1,0 +1,16 @@
+@import './grid.scss';
+
+html, 
+body {
+    height: 100%;
+}
+
+.leftBox {
+  background-color: pink;
+}
+.rightTopBox {
+  background-color: yellow;
+}
+.rightBottomBox {
+  background-color: blue;
+}
